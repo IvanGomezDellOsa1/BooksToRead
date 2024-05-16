@@ -1,12 +1,52 @@
 *{
     margin: 0;
 }
+
+html{
+    font-size: 16px; /* 1rem = 16px */
+    color: #242424;
+    background-color: #ffffff;
+    font-family: Cambria, Georgia, serif;
+}
+body{
+
+}
+header{
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+}
+.titulo_agregar_libro{
+    flex-grow: 1;
+    text-align: center;
+    font-family: Cambria, Georgia, serif;
+    font-size: 2rem;
+}
 .bar {
     display: block;
     width: 1.5rem;
     height: 0.25rem;
-    margin: 0.3rem auto;
+    margin-top: 0.3rem;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #262626;
+}
+
+#form_agregar_libro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.btn_guardar{
+    display: flex;
+    justify-content: center;
+    background-color: #2094f3;
+    width: 90%;
+    height: 3rem;
+    border-radius: 1rem;
+    border:none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
 }

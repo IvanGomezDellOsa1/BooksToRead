@@ -32,22 +32,25 @@ document.addEventListener("DOMContentLoaded", function() {
         autor = 'No ingresaste autor'
     };
 
+    // Obtener biblioteca del localStorage
+    let biblioteca = JSON.parse(localStorage.getItem('biblioteca')) || []; //JSON.parse(null) genera error. Es decir, si biblioteca = null. Para evitarlo biblioteca = [] (arreglo vacio)
+
+    let id = biblioteca.length;
+
     //JSON con datos del libro
     let libro = {
+        id : id,
         titulo : titulo,
         autor : autor,
         estado_lectura : estado_lectura
-    }; 
-    
-    // Obtener biblioteca del localStorage
-    let biblioteca = JSON.parse(localStorage.getItem('biblioteca')) || []; //JSON.parse(null) genera error. Es decir, si biblioteca = null. Para evitarlo biblioteca = [] (arreglo vacio)
+    };
+
     biblioteca.push(libro);
-        
-    //local Storage
+    //Convierte biblioteca en un JSON y lo guarda en localStorage
     localStorage.setItem('biblioteca', JSON.stringify(biblioteca));
     //Cambio de pantalla
     window.location.href = "../index.html";
-    //En index.html se ejectura script_index donde se imprime los datos nuevo libro
+    //En index.html se ejectura script_index donde se imprime toda la biblioteca incluido el ultimo libro
     }
 });
 

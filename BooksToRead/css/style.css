@@ -1,25 +1,45 @@
 *{
     margin: 0;
 }
+html{
+    font-size: 16px; /* 1rem = 16px */
+    color: #242424;
+    background-color: #ffffff;
+}
 
-.navbar__logo{
-    width: 70px;
+header{
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+}
+.titulo_biblioteca{
+    flex-grow: 1;
+    text-align: center;
+    font-family: Cambria, Georgia, serif;
+    font-size: 2rem;
 }
 
 .bar {
     display: block;
     width: 1.5rem;
     height: 0.25rem;
-    margin: 0.3rem auto;
+    margin-top: 0.3rem;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #262626;
 }
 
-table {
-    width: 90%;
-    
+#tabla_libros {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-inline:0.5rem;
+    width: 100%;
+
 }
-.add_image{
-    width:50px;
+
+.add_imagen{
+    display: flex;
+    position: fixed;
+    bottom: 4rem;
+    right: 3rem;
+    z-index: 99;
 }
