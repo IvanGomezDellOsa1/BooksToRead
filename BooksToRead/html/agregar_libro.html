@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="BooksToRead"/>
+    <title>Agregar libro / BooksToRead</title>
+    <meta name="description" content="Organiza tu lectura con nuestra aplicación móvil. Gestiona tu lista de libros por leer y leídos fácilmente. Marca libros como leídos, añade nuevos títulos y visualiza tus lecturas completadas en un solo lugar."/>
+    <link rel="stylesheet" href="../css/agregar_libro__style.css"/>
+    <link rel="icon" href="../css/icon_BooksToRead.ico"/>
+    <script src="../javascript/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Agregar libro</h1>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <form id="form_agregar_libro">
+            <input type="text" name="titulo" placeholder="Título del libro" value="" maxlength="60" required>
+            <input type="text" name="autor" placeholder="Autor" maxlength="60" value="">
+            <!-- Opciones -->
+                <label>Elegir estado de lectura:</label>
+            <input type="radio" name="estado_lectura"  value="No leido"required> 
+                <label>No leido</label>
+            <input type="radio" name="estado_lectura"  value="Leyendo" required>
+                <label>Leyendo</label>
+            <input type="radio" name="estado_lectura"  value="Leido" required>
+                <label>Leido</label>
+            <!-- Opciones -->
+            <input type="submit" name="guardar_libro" value="Guardar Libro">
+        </form>
+    </section>
+    
+</body>
+</html>
+
+

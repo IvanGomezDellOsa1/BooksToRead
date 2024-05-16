@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+}
+
+.navbar__logo{
+    width: 70px;
+}
+
+.bar {
+    display: block;
+    width: 1.5rem;
+    height: 0.25rem;
+    margin: 0.3rem auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #262626;
+}
+
+table {
+    width: 90%;
+    
+}
+.add_image{
+    width:50px;
+}
