@@ -3,28 +3,27 @@
 }
 html{
     font-size: 16px; /* 1rem = 16px */
-    color: #242424;
-    background-color: #ffffff;
     font-family: Cambria, Georgia, serif;
 }
 body{
     max-width: 1444px;
     margin: auto;
 }
+#lightmode{
+    color: #242424;
+    background-color: #ffffff;
+}
+
 header{
     display: flex;
     margin: 1.5rem;
     padding-bottom: 1.5rem;
 }
-.titulo_agregar_libro{
+.titulo_registrarse{
     flex-grow: 1;
     text-align: center;
     font-size: 1.5rem;
-    
 }
-
-/* .nav_desktop{
-} */
 
 .bar {
     display: block;
@@ -35,27 +34,13 @@ header{
     background-color: #262626;
 }
 
-#form_agregar_libro{
+.form_registrarse , .captcha_form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.btn_guardar{
-    display: flex;
-    justify-content: center;
-    background-color: #2094f3;
-    width: 90vw;
-    height: 3rem;
-    border-radius: 1rem;
-    border:none;
-    cursor: pointer;
-    color: #ffffff;
-    font-weight: bold;
-    margin-top: 2rem;
-}
 
-.form__textos input{
-    display: flex;
+.form_registrarse input , .captcha_form input{
     font-family: Cambria, Georgia, serif;
     font-size: 1rem;
     width: 90vw;
@@ -68,15 +53,31 @@ header{
     padding-left: 1rem;
 }
 
-.form__estado_lectura {
-    display: flex;
-    width: 80vw;
-    justify-content: space-around;
-    font-style: italic;
+.captcha_form input{
+    width: 55vw;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.captcha_desafio{
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: solid #2094f3 0.2rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+#captcha_submit{
+    background-color: #2094f3;
+    color: #ffffff;
+    border: none;
+    width: 80vw;
+}
+
+.captcha_resultado_positivo{
+    font-size: 1.1rem;
+    color: green;
+}
+.captcha_resultado_negativo{
+    font-size: 1.1rem;
+    color: red;
 }

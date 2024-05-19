@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="BooksToRead"/>
+    <title>Registrarse / BooksToRead</title>
+    <meta name="description" content="Organiza tu lectura con nuestra aplicación móvil. Gestiona tu lista de libros por leer y leídos fácilmente. Marca libros como leídos, añade nuevos títulos y visualiza tus lecturas completadas en un solo lugar."/>
+    <link rel="stylesheet" href="./css/style_registrarse.css"/>
+    <link rel="icon" href="../css/icon_BooksToRead.ico"/>
+    <script src="../javascript/script_registrarse.js"></script>
+</head>
+<body id="lightmode">
+    <header>
+        <h1 class="titulo_registrarse">Registrarse</h1>
+        <nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <form class="form_registrarse">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" placeholder="Apellido">
+            <input type="number" name="telefono" placeholder="Telefono">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Contraseña">
+        </form>
+        <div>
+            <form class="captcha_form">
+                <label class="captcha_desafio"></label>
+                <input type="number" name="numero_respuesta" placeholder="Compruebe que es humano" required>
+                <input id="captcha_submit" type="submit" name="captcha_submit" value="Registrarse">
+                <label id="captcha_resultado"></label>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

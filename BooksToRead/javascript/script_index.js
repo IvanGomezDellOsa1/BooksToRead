@@ -9,12 +9,16 @@ document.addEventListener("DOMContentLoaded", function() {
         // Imprimir datos en la tabla
         tabla.innerHTML += `
             <tr>
-                <td rowspan="2">${libro.estado_lectura}</td>
-                <td>${libro.titulo}</td>
+                <td class="td__titulo">${libro.titulo}</td>
+                <td class="btn_borrar">
+                    <button id="btn_borrar_${libro.id}">
+                        <img src="./css/img_borrar.png" alt="img_borrar">
+                    </button>
+                </td>
             </tr>
-            <tr>
+            <tr class="tr__inferior">
                 <td>${libro.autor}</td>
-                <td rowspan="2"><button id="btn_borrar_${libro.id}">${libro.id}</button></td>
+                <td>${libro.estado_lectura}</td>
             </tr>
         `;
     });

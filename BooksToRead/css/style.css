@@ -5,41 +5,51 @@ html{
     font-size: 16px; /* 1rem = 16px */
     color: #242424;
     background-color: #ffffff;
+    font-family: Cambria, Georgia, serif;
 }
 
 header{
     display: flex;
-    align-items: center;
     margin: 1.5rem;
+    padding-bottom: 1.5rem;
+    max-width: 1444px;
 }
 .titulo_biblioteca{
     flex-grow: 1;
     text-align: center;
-    font-family: Cambria, Georgia, serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-
 .bar {
     display: block;
     width: 1.5rem;
     height: 0.25rem;
     margin-top: 0.3rem;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
     background-color: #262626;
 }
 
 #tabla_libros {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-inline:0.5rem;
-    width: 100%;
-
+    width: 95vw;
+    max-width: 1444px;
+    margin: auto;
 }
 
-.add_imagen{
+.td__titulo{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.tr__inferior td{
+    color: #61788A;
+    padding-bottom: 2rem;
+}
+.btn_borrar , .btn_borrar img{
+    width: 1rem;
+}
+.add_img{
     display: flex;
     position: fixed;
-    bottom: 4rem;
+    bottom: 5rem;
     right: 3rem;
     z-index: 99;
 }
+
