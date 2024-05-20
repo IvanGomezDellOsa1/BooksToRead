@@ -23,15 +23,16 @@ header{
     
 }
 
-/* .nav_desktop{
-} */
+.hamburger {
+    z-index: 99;
+    position: relative;
+}
 
 .bar {
     display: block;
     width: 1.5rem;
     height: 0.25rem;
     margin-top: 0.3rem;
-    transition: all 0.3s ease-in-out; /* OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
     background-color: #262626;
 }
 
@@ -73,6 +74,14 @@ header{
     width: 80vw;
     justify-content: space-around;
     font-style: italic;
+    
+}
+.form__estado_lectura li{
+    padding: 0.1rem;
+}
+.form__estado_lectura li:hover{
+    border: dashed 0.1rem #2094f3;
+    border-radius: 0.5rem;
 }
 
 ul {
@@ -80,3 +89,99 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    border-bottom: solid 0.2rem #2094f3;
+    border-radius: 0.5rem;
+}
+
+.titulo_nav{
+    display: none;
+}
+
+#nav{
+    display: none;  /* Mobile por defecto */
+    background-color: #242424;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+#nav ul li {
+    padding: 1rem 0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#nav.show{
+    display: flex;
+}
+.show .bar{
+    background-color: #ffffff;
+}
+
+@media (min-width: 1024px){
+    nav{
+        width: 100%;
+        margin: auto;
+    }
+    .hamburger{
+        display: none;
+    }
+    .titulo_agregar_libro{
+        display: none;
+    }
+    .add_img{
+        bottom: 10%;
+        right: 50%;
+    }
+    .titulo_nav{
+        display: flex;
+        justify-content: start;
+        padding-left: 5vw;
+        width: 50%;
+        align-items: center;
+        color: #ffffff;
+        font-style: italic;
+    }
+    #nav{
+        display: flex;
+        height: 3rem;
+        justify-content: space-between;
+        position: static;
+        height: 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+    #nav ul li{
+        padding-right:5rem;
+    }
+}
+
