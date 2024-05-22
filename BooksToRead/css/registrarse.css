@@ -1,33 +1,30 @@
-*{
+* {
     margin: 0;
 }
-html{
+html {
     font-size: 16px; /* 1rem = 16px */
-    color: #242424;
-}
-body{
-    max-width: 1444px;
-    margin: auto;
-    background-color: #ffffff;
     font-family: Cambria, Georgia, serif;
 }
-header{
+body {
+    max-width: 1444px;
+    margin: auto;
+    color: #242424;
+    background-color: #ffffff;
+}
+header {
     display: flex;
     margin: 1.5rem;
     padding-bottom: 1.5rem;
 }
-.titulo_agregar_libro{
+.titulo_registrarse {
     flex-grow: 1;
     text-align: center;
     font-size: 1.5rem;
-    
 }
-
 .hamburger {
     z-index: 99;
     position: relative;
 }
-
 .bar {
     display: block;
     width: 1.5rem;
@@ -35,77 +32,68 @@ header{
     margin-top: 0.3rem;
     background-color: #262626;
 }
-
-#form_agregar_libro{
+.form_registrarse,
+.captcha_form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.btn_guardar{
-    display: flex;
-    justify-content: center;
-    background-color: #2094f3;
-    width: 90vw;
-    height: 3rem;
-    border-radius: 1rem;
-    border:none;
-    cursor: pointer;
-    color: #ffffff;
-    font-weight: bold;
-    margin-top: 2rem;
-}
-
-.form__textos input{
-    display: flex;
+.form_registrarse input,
+.captcha_form input {
     font-family: Cambria, Georgia, serif;
     font-size: 1rem;
     width: 90vw;
     height: 3rem;
     border-radius: 1rem;
-    border:none;
+    border: none;
     cursor: pointer;
     background-color: #f1f2f6;
     margin-bottom: 1rem;
     padding-left: 1rem;
 }
-
-.form__estado_lectura {
-    display: flex;
-    width: 80vw;
-    justify-content: space-around;
-    font-style: italic;
-    
+.captcha_form input {
+    width: 55vw;
 }
-.form__estado_lectura li{
-    padding: 0.1rem;
-}
-.form__estado_lectura li:hover{
-    border: dashed 0.1rem #2094f3;
+.captcha_desafio {
+    font-size: 1.2rem;
+    margin: 1rem;
+    border: solid #2094f3 0.2rem;
+    padding: 0.4rem;
     border-radius: 0.5rem;
+    font-weight: bold;
 }
-
+#captcha_submit {
+    background-color: #2094f3;
+    color: #ffffff;
+    border: none;
+    width: 80vw;
+}
+.captcha_resultado_positivo {
+    font-size: 1.1rem;
+    color: green;
+}
+.captcha_resultado_negativo {
+    font-size: 1.1rem;
+    color: red;
+}
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-
-a:hover{
+a:hover {
     border-bottom: solid 0.2rem #2094f3;
     border-radius: 0.5rem;
 }
-
-.titulo_nav{
+.titulo_nav {
     display: none;
 }
-
-#nav{
-    display: none;  /* Mobile por defecto */
+#nav {
+    display: none; /* Mobile por defecto */
     background-color: #242424;
     color: #ffffff;
     position: fixed;
@@ -114,48 +102,43 @@ a:hover{
     width: 100%;
     height: 100%;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 0.5rem;
 }
-
 #nav ul {
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 }
-
 #nav ul li {
     padding: 1rem 0;
     font-size: 1rem;
     font-weight: bold;
 }
-
-#nav.show{
+#nav.show {
     display: flex;
 }
-.show .bar{
+.show .bar {
     background-color: #ffffff;
 }
-
-@media (min-width: 1024px){
-    nav{
+@media (min-width: 1024px) {
+    nav {
         width: 100%;
         margin: auto;
     }
-    .hamburger{
+    .hamburger {
         display: none;
     }
-    .titulo_agregar_libro{
+    .titulo_registrarse {
         display: none;
     }
-    .add_img{
+    .add_img {
         bottom: 10%;
         right: 50%;
     }
-    .titulo_nav{
+    .titulo_nav {
         display: flex;
         justify-content: start;
         padding-left: 5vw;
@@ -163,7 +146,7 @@ a:hover{
         align-items: center;
         font-style: italic;
     }
-    #nav{
+    #nav {
         display: flex;
         height: 3rem;
         justify-content: space-between;
@@ -173,66 +156,60 @@ a:hover{
         justify-content: space-between;
         align-items: center;
     }
-    #nav ul{
+    #nav ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 50%;
     }
-    #nav ul li{
-        padding-right:5rem;
+    #nav ul li {
+        padding-right: 5rem;
     }
 }
-
 /* Modo oscuro*/
-#modo_oscuro{
+#modo_oscuro {
     display: flex;
     align-items: center;
-    background-color:#2094f38e;
+    background-color: #2094f38e;
     position: relative;
     width: 4rem;
     height: 2rem;
     border-radius: 1rem;
     user-select: none;
 }
-.toggle{
+.toggle {
     position: relative;
     width: 1.5rem;
 }
-
 .apagado {
     display: block;
 }
-
 .encendido {
     display: none;
 }
-
 .modo_oscuro .apagado {
-    display: none; 
+    display: none;
 }
-
 .modo_oscuro .encendido {
     display: block;
     left: 2rem;
 }
-/* Modificaciones de diseño */
-body.modo_oscuro{
+/* Modo oscuro: Modificaciones de diseño */
+body.modo_oscuro {
     color: #ffffff;
     background-color: #242424;
 }
-.bar.modo_oscuro{
+.bar.modo_oscuro {
     background-color: #ffffff;
 }
-.show .bar.modo_oscuro{
+.show .bar.modo_oscuro {
     background-color: #ffffff;
 }
-#nav.modo_oscuro{
+#nav.modo_oscuro {
     background-color: #464646;
     color: #ffffff;
 }
-#nav.show.modo_oscuro{
+#nav.show.modo_oscuro {
     background-color: #242424;
 }
-/* --------- */
