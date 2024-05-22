@@ -3,13 +3,13 @@
 }
 html{
     font-size: 16px; /* 1rem = 16px */
-    color: #242424;
-    background-color: #ffffff;
     font-family: Cambria, Georgia, serif;
 }
 body{
     max-width: 1444px;
     margin: auto;
+    color: #242424;
+    background-color: #ffffff;
 }
 header{
     display: flex;
@@ -25,6 +25,7 @@ header{
 .hamburger {
     z-index: 99;
     position: relative;
+    
 }
 
 .bar {
@@ -35,6 +36,7 @@ header{
     background-color: #262626;
 }
 
+
 #tabla_libros {
     width: 95vw;
     max-width: 1000px;
@@ -44,7 +46,10 @@ header{
 .td__titulo{
     font-size: 1.1rem;
     font-weight: bold;
+    background-color: #51515151;
+    border-radius: 0.5rem;
 }
+
 .tr__inferior td{
     color: #61788A;
     padding-bottom: 2rem;
@@ -83,6 +88,7 @@ ul a:hover{
 #nav{
     display: none;  /* Mobile por defecto */
     background-color: #242424;
+    color: #ffffff;
     position: fixed;
     z-index: 2; /* Mas index que add_img */
     top: 0;
@@ -93,7 +99,9 @@ ul a:hover{
     align-items:center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 0.5rem;
 }
+
 
 #nav ul {
     display: flex;
@@ -104,7 +112,6 @@ ul a:hover{
 
 #nav ul li {
     padding: 1rem 0;
-    color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -115,7 +122,6 @@ ul a:hover{
 .show .bar{
     background-color: #ffffff;
 }
-
 
 @media (min-width: 1024px){
     nav{
@@ -138,7 +144,6 @@ ul a:hover{
         padding-left: 5vw;
         width: 50%;
         align-items: center;
-        color: #ffffff;
         font-style: italic;
     }
     #nav{
@@ -163,3 +168,55 @@ ul a:hover{
     }
 }
 
+
+/* Modo oscuro*/
+#modo_oscuro{
+    display: flex;
+    align-items: center;
+    background-color:#2094f38e;
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    user-select: none;
+}
+.toggle{
+    position: relative;
+    width: 1.5rem;
+}
+
+.apagado {
+    display: block;
+}
+
+.encendido {
+    display: none;
+}
+
+.modo_oscuro .apagado {
+    display: none; 
+}
+
+.modo_oscuro .encendido {
+    display: block;
+    left: 2rem;
+}
+/* Modificaciones de diseño */
+body.modo_oscuro{
+    color: #ffffff;
+    background-color: #242424;
+}
+.bar.modo_oscuro{
+    background-color: #ffffff;
+}
+.show .bar.modo_oscuro{
+    background-color: #ffffff;
+}
+#nav.modo_oscuro{
+    background-color: #464646;
+    color: #ffffff;
+}
+#nav.show.modo_oscuro{
+    background-color: #242424;
+}
+/* --------- */

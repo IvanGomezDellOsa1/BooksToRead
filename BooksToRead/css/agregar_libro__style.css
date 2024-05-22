@@ -4,12 +4,12 @@
 html{
     font-size: 16px; /* 1rem = 16px */
     color: #242424;
-    background-color: #ffffff;
-    font-family: Cambria, Georgia, serif;
 }
 body{
     max-width: 1444px;
     margin: auto;
+    background-color: #ffffff;
+    font-family: Cambria, Georgia, serif;
 }
 header{
     display: flex;
@@ -107,6 +107,7 @@ a:hover{
 #nav{
     display: none;  /* Mobile por defecto */
     background-color: #242424;
+    color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
@@ -116,6 +117,7 @@ a:hover{
     align-items:center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 0.5rem;
 }
 
 #nav ul {
@@ -127,7 +129,6 @@ a:hover{
 
 #nav ul li {
     padding: 1rem 0;
-    color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -160,7 +161,6 @@ a:hover{
         padding-left: 5vw;
         width: 50%;
         align-items: center;
-        color: #ffffff;
         font-style: italic;
     }
     #nav{
@@ -185,3 +185,54 @@ a:hover{
     }
 }
 
+/* Modo oscuro*/
+#modo_oscuro{
+    display: flex;
+    align-items: center;
+    background-color:#2094f38e;
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    user-select: none;
+}
+.toggle{
+    position: relative;
+    width: 1.5rem;
+}
+
+.apagado {
+    display: block;
+}
+
+.encendido {
+    display: none;
+}
+
+.modo_oscuro .apagado {
+    display: none; 
+}
+
+.modo_oscuro .encendido {
+    display: block;
+    left: 2rem;
+}
+/* Modificaciones de diseño */
+body.modo_oscuro{
+    color: #ffffff;
+    background-color: #242424;
+}
+.bar.modo_oscuro{
+    background-color: #ffffff;
+}
+.show .bar.modo_oscuro{
+    background-color: #ffffff;
+}
+#nav.modo_oscuro{
+    background-color: #464646;
+    color: #ffffff;
+}
+#nav.show.modo_oscuro{
+    background-color: #242424;
+}
+/* --------- */
