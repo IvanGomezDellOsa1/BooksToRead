@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Guarda la biblioteca actualizada en localStorage
         localStorage.setItem('biblioteca', JSON.stringify(biblioteca));
         //Refresca la pagina para mostrar los datos actualizados
-        window.location.href = "../index.html";
+        window.location.reload();
     }
 });
