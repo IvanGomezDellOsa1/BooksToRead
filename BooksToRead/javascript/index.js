@@ -1,46 +1,86 @@
 "use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
-    let tabla = document.getElementById("tabla_libros");
+    //Eliminar local storage que no se uso
+    localStorage.removeItem('libroId');
 
-    // Obtener datos del sessionStorage
-    let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []; //JSON.parse(null) genera error. Es decir, si biblioteca = null. Para evitarlo biblioteca = [] (arreglo vacio)
+    let tabla = document.getElementById("tabla_libros");   
+    cargarLibros();
 
-    biblioteca.forEach((libro) => {
-        // Imprimir datos en la tabla
-        tabla.innerHTML += `
-            <tr>
-                <td class="td__titulo">${libro.titulo}</td>
-                <td class="btn_borrar">
-                    <button id="btn_borrar_${libro.id}">
-                        <img src="./css/images/img_borrar.png" alt="img_borrar">
-                    </button>
-                </td>
-            </tr>
-            <tr class="tr__inferior">
-                <td>${libro.autor}</td>
-                <td>${libro.estado_lectura}</td>
-            </tr>
-        `;
-    });
+    async function cargarLibros() {
+        try {
+            let response = await fetch('https://667893330bd45250561f25c0.mockapi.io/api/BooksToRead/Libros', {
+                method: 'GET'
+            });
 
-    //Segun el ID correspondiente se genera un EventListener a cada boton con el objetivo de poder borrar un libro especifico
-    biblioteca.forEach((libro) => {
-        let btnBorrar = document.getElementById(`btn_borrar_${libro.id}`);
-        btnBorrar.addEventListener("click", function () {
-            borrarLibro(libro.id);
-        });
-    });
-
-    function borrarLibro(id) {
-        // Elimina el libro especifico segun id y reordena el arreglo biblioteca
-        biblioteca.splice(id, 1);
-        // Reasigna índices
-        for (let i = 0; i < biblioteca.length; i++) {
-            biblioteca[i].id = i;
+            let biblioteca = await response.json();
+    
+            // Limpiar tabla antes de agregar nuevos datos
+            tabla.innerHTML = '';
+    
+            biblioteca.forEach((libro) => {
+                // Imprimir datos en la tabla
+                tabla.innerHTML += `
+                    <tr>
+                        <td class="td__titulo">${libro.titulo}</td>
+                        <td class="btn_borrar">
+                            <button id="btn_borrar_${libro.id}">
+                                <img src="./css/images/img_borrar.png" alt="img_borrar">
+                            </button>
+                            <button id="btn_editar_${libro.id}">
+                                <img src="./css/images/img_editar.png" alt="img_editar">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="tr__inferior">
+                        <td>${libro.autor}</td>
+                        <td>${libro.estado_lectura}</td>
+                    </tr>
+                `;
+            });
+    
+            // Asignar eventos de click a los botones de borrar y editar
+            asignarEventosBotones(biblioteca);
+        } catch (error) {
+            console.error('Error cargando libros:', error);
         }
-        // Guarda la biblioteca actualizada en localStorage
-        localStorage.setItem("biblioteca", JSON.stringify(biblioteca));
-        //Refresca la pagina para mostrar los datos actualizados
-        window.location.reload();
+    }
+
+    function asignarEventosBotones(biblioteca) {
+        biblioteca.forEach((libro) => {
+            let btnBorrar = document.getElementById(`btn_borrar_${libro.id}`);
+            let btnEditar = document.getElementById(`btn_editar_${libro.id}`);
+
+            btnBorrar.addEventListener("click", function () {
+                borrarLibro(libro.id);
+            });
+            btnEditar.addEventListener("click", function () {
+                editarLibro(libro.id);
+            });
+        });
+    }
+
+    async function borrarLibro(id) {
+        try{
+            // Eliminar libro de MockApi usando DELETE
+            let response = await fetch(`https://667893330bd45250561f25c0.mockapi.io/api/BooksToRead/Libros/${id}`, {
+                method: 'DELETE'
+            })
+            if(response.status === 200 ){
+                console.log('Libro eliminado correctamente.');
+                // Refrescar la página para mostrar los datos actualizados
+                window.location.reload();
+            }
+        } catch (error) {
+            console.log("Error eliminando libro", error);
+        }
+    }
+
+    function editarLibro(id) {
+        // Almacenar el ID del libro en localStorage
+        localStorage.setItem('libroId', id);
+        // Redirigir a agregar_libro.html para editar el libro
+        window.location.href = '../html/agregar_libro.html';
     }
 });
+
