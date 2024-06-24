@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleDarkMode.addEventListener("click", function () {
         toggleDarkMode.classList.toggle("modo_oscuro");
         body.classList.toggle("modo_oscuro");
-        bars.forEach((bars) => { //Son 3 necesita aplicarse a cada una
+        bars.forEach((bars) => {
+            //Son 3 necesita aplicarse a cada una
             bars.classList.toggle("modo_oscuro");
         });
         navBar.classList.toggle("modo_oscuro");

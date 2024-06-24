@@ -20,11 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
             "captcha_resultado_positivo",
             "captcha_resultado_negativo"
         ); //Evita que si hay mas de un intento se acumulen las clases
-        
+
         if (numero_respuesta === numero_desafio) {
             captchaResultado.classList.add("captcha_resultado_positivo");
-            captchaResultado.innerHTML =
-                "Resultado correcto(Envio completado)";
+            captchaResultado.innerHTML = "Resultado correcto(Envio completado)";
         } else {
             captchaResultado.classList.add("captcha_resultado_negativo");
             captchaResultado.innerHTML =

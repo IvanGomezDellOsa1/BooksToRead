@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="BooksToRead" />
         <title>Registrarse / BooksToRead</title>
-        <meta name="description" content="Organiza tu lectura con nuestra aplicación móvil. Gestiona tu lista de libros por leer y leídos fácilmente. Marca libros como leídos, añade nuevos títulos y visualiza tus lecturas completadas en un solo lugar." />
+        <meta
+            name="description"
+            content="Organiza tu lectura con nuestra aplicación móvil. Gestiona tu lista de libros por leer y leídos fácilmente. Marca libros como leídos, añade nuevos títulos y visualiza tus lecturas completadas en un solo lugar."
+        />
         <link rel="stylesheet" href="../css/registrarse.css" />
         <link rel="icon" href="../css/images/BooksToRead.ico" />
         <script src="../javascript/registrarse.js"></script>
@@ -27,12 +30,22 @@
                     </h1>
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
-                        <li> <a href="./agregar_libro.html">Agregar Libro</a> </li>
+                        <li>
+                            <a href="./agregar_libro.html">Agregar Libro</a>
+                        </li>
                         <li><a href="./registrarse.html">Registrarse</a></li>
                     </ul>
                     <div id="modo_oscuro">
-                        <img class="toggle apagado" src="../css/images/darkmode_off.png" alt="darkmode_off"/>
-                        <img class="toggle encendido" src="../css/images/darkmode_on.png" alt="darkmode_on"/>
+                        <img
+                            class="toggle apagado"
+                            src="../css/images/darkmode_off.png"
+                            alt="darkmode_off"
+                        />
+                        <img
+                            class="toggle encendido"
+                            src="../css/images/darkmode_on.png"
+                            alt="darkmode_on"
+                        />
                     </div>
                 </div>
             </nav>
@@ -42,16 +55,33 @@
                 <form class="form_registrarse">
                     <input type="text" name="nombre" placeholder="Nombre" />
                     <input type="text" name="apellido" placeholder="Apellido" />
-                    <input type="number" name="telefono" placeholder="Telefono" />
+                    <input
+                        type="number"
+                        name="telefono"
+                        placeholder="Telefono"
+                    />
                     <input type="email" name="email" placeholder="Email" />
-                    <input type="password" name="password" placeholder="Contraseña"
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Contraseña"
                     />
                 </form>
                 <div>
                     <form class="captcha_form">
                         <label class="captcha_desafio"></label>
-                        <input type="number" name="numero_respuesta" placeholder="Compruebe que es humano"required/>
-                        <input id="captcha_submit" type="submit" name="captcha_submit" value="Registrarse"/>
+                        <input
+                            type="number"
+                            name="numero_respuesta"
+                            placeholder="Compruebe que es humano"
+                            required
+                        />
+                        <input
+                            id="captcha_submit"
+                            type="submit"
+                            name="captcha_submit"
+                            value="Registrarse"
+                        />
                         <label id="captcha_resultado"></label>
                     </form>
                 </div>
